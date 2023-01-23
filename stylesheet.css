@@ -1,0 +1,24 @@
+
+/* Bryce Manley */
+
+/* set background to pink */
+body {
+    background-color: rgb(255, 190, 201);
+}
+
+/* set font to Comic Sans */
+h1{
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; 
+}
+
+/*make the cheesecake flip when you hover over it*/
+img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+/*set alignment for dropdown menu*/
+#alignment {
+    position: absolute;
+    left: 150px;
+}
+
