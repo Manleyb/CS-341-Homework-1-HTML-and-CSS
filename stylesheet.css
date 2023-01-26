@@ -3,12 +3,23 @@
 
 /* set background to pink */
 body {
-    background-color: rgb(255, 190, 201);
+    background-image: url('https://thumbs.gfycat.com/ExcellentDismalBluetonguelizard-size_restricted.gif');
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
 }
 
 /* set font to Comic Sans */
 h1{
     font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; 
+    /* make font bigger */
+    font-size: 100px;
+    background-color: rgb(26, 255, 0);
+    
 }
 
 /*make the cheesecake flip when you hover over it*/
