@@ -1,13 +1,17 @@
 <!-- Bryce Manley -->
-
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>
+</script>
 
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="cheesecakeScript.js"></script>
 </head>
 
 <h1>Cheesecake Order Form</h1>
+
 <body>
     <div class="gif"></div>
     <div class="gif1"></div>
@@ -21,33 +25,89 @@
     <img src="https://media.tenor.com/xOQododF_V8AAAAd/gorilla-walking-gorilla.gif" alt="Gorilla" width="500" height="777" style="transform: scaleX(-1);">
 
 <br>
-</select>
-Quantity Toppings:
-<br>
+<!-- </select>
+Quantity Toppings: -->
+<script>
+  function changeMonth(month) {
+    document.getElementById("month-button").innerHTML = month;
+  }
 
-<select name="alignment" id="alignment"   >
-<option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-<form name="myWebForm" action="clickButton" method="post">
-    <h4>Please select your favorite food category.</h4>
-    <input type="radio" name="food" checked />  cherry<br />
-    <input type="radio" name="food" />  peach<br />
-    <!-- submit action if eater egg button is selected forward to link https://www.youtube.com/watch?v=-->
-    <input type="radio" name="food" onclick="window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';" />  don't click this button<br />
+  function submitForm() {
+    const notes = document.getElementById("fname").value;
+    if (notes === "Vegan") {
+      document.body.innerHTML = `
+        <div style="background-color: black; color: red; text-align: center; font-size: 36px;">
+          Alert: Cheesecake contains dairy!
+        </div>
+      `;
+    } else {
+      document.body.innerHTML = `
+      
+      <div style="background-color: green ; color: pink; text-align: center; font-size: 36px;">
+         <h3>Thank you! Your order has been placed</h3>
+        <p>Topping: ${document.querySelector("input[name='food']:checked").nextSibling.nodeValue}</p>
+        // <p>Quantity: ${document.getElementById("alignment").value}</p>
+        <p>Notes: ${notes}</p>
+      `;
+    }
+  }
+</script>
 
-        <label for="fname">Notes:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <input type="submit" value="Submit" />
-    </form>
-    <!-- subheading that says total orders last month-->
-    <h3>Total Orders Last Month</h3>
+<form name="myWebForm" action="clickButton" method="post" class="rainbow">
+  <h4>Please select your favorite food category.</h4>
+  <input type="radio" name="food" checked /> cherry<br />
+  <input type="radio" name="food" class="rainbow" /> peach<br />
+  <!-- submit action if eater egg button is selected forward to link https://www.youtube.com/watch?v=-->
+  <input type="radio" name="food" onclick="window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';" /> don't click this button<br />
+
+  <label for="fname">notes:</label><br>
+  <input type="text" id="fname" name="fname" class="rainbow"><br>
+  <input type="button" value="Submit" class="rainbow" onclick="submitForm();" />
+</form>
+
+    <h3>Total Orders For</h3>
+    <div class="month-dropdown">
+      <button class="dropdown-btn rainbow" id="month-button">Last Month</button>
+      <div class="dropdown-content">
+        <a href="#" class="rainbow" onclick="changeMonth('January');">January</a>
+        <a href="#" class="rainbow" onclick="changeMonth('February');">February</a>
+        <a href="#" class="rainbow" onclick="changeMonth('March');">March</a>
+        <!-- Add more months -->
+      </div>
+    </div>
+    
+    <script>
+    function changeMonth(month) {
+      document.getElementById("month-button").innerHTML = month;
+    }
+
+  function submitForm() {
+    const notes = document.getElementById("fname").value;
+    if (notes === "Vegan" || notes === "vegan") {
+      document.body.innerHTML = `
+        <div style="background-color: black; color: red; text-align: center; font-size: 36px;">
+          Alert: Cheesecake contains dairy!
+        </div>
+      `;
+    } else {
+      document.body.innerHTML = `
+        <h3 class  = "rainbow" >Thank you! Your order has been placed</h3>
+        <p class  = "rainbow">Topping: ${document.querySelector("input[name='food']:checked").nextSibling.nodeValue}</p>
+        <p class  = "rainbow">Notes: ${notes}</p>
+      `;
+    }
+  }
+</script>
+    </script>
+    
     <ul>
         <li>11 peach</li>
         <li>77 cherry</li>
         <li>90 coffee</li>
+        
       </ul> 
+
+<!--insert 20 lines of white space-->
 
 
 </html>
